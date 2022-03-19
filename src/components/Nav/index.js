@@ -1,40 +1,32 @@
 // import React, { useEffect } from "react";
 
-function Nav() {
+function Nav(props) {
+
+  const {
+    setContactSelected,
+  } = props;
 
   return (
     <header>
       <nav>
         <ul>
           <li>
-            <a
-              data-testid="about"
-              href="#about"
-            >
-              About me
+            <a href="#about" onClick={() => setContactSelected(false)}>
+              About
             </a>
           </li>
           <li>
-            <a
-              data-testid="porfolio"
-              href="#porfolio"
-            >
-              Portfolio
-            </a>
-          </li>
-          <li>
-            <a
-              data-testid="contact"
-              href="#contact"
-            >
+            <a href="#contact" onClick={() => setContactSelected(true)}>
               Contact
             </a>
           </li>
           <li>
-            <a
-              data-testid="resume"
-              href="#resume"
-            >
+            <a href="#portfolio" onClick={() => setContactSelected(false)}>
+              Portfolio
+            </a>
+          </li>
+          <li>
+            <a href="#resume" onClick={() => setContactSelected(false)}>
               Resume
             </a>
           </li>
