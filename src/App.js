@@ -1,4 +1,8 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
+// import ReactDOM from "react-dom";
+// import { library } from "@fortawesome/fontawesome-svg-core";
+// import { fas } from "@fortawesome/free-solid-svg-icons";
+// import { fa-linkedin, faFontAwesome } from "@fortawesome/free-brand-svg-icons";
 
 import Contact from "./components/Contact";
 import Portfolio from "./components/Portfolio";
@@ -7,8 +11,10 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Resume from "./components/Resume";
 
+// library.add(fas, faTwitter, faFontAwesome);
 
 function App() {
+  
   const [portfolioSelected, setPortfolioSelected] = useState(false);
   const [contactSelected, setContactSelected] = useState(false);
   const [aboutSelected, setAboutSelected] = useState(true);
