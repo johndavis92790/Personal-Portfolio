@@ -1,15 +1,16 @@
 import React, { useState } from "react";
-import Modal from "../Modal";
+import ModalDiv from "../Modal";
+import { Button, Row, Col, Card } from "react-bootstrap";
 
 function Project() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalShow, setModalShow] = useState(false);
   const [currentProject, setCurrentProject] = useState();
 
   const [projects] = useState([
     {
       name: "Stony Brook",
       description: "Making returns easy, one step at a time",
-      url: "https://johndavis92790.github.io/Warehouse-Returns/",
+      url: "https://salty-brook-34116.herokuapp.com/",
       github: "https://github.com/johndavis92790/Warehouse-Returns",
     },
     {
@@ -43,32 +44,52 @@ function Project() {
       name: "Note Taker",
       description:
         "You can use this to create notes and to access them anytime you go back to the app.",
-      url: "https://johndavis92790.github.io/miniture-eureka/",
+      url: "https://miniture-eureka-92790.herokuapp.com/",
       github: "https://github.com/johndavis92790/miniture-eureka",
     },
   ]);
 
-  const toggleModal = (image, i) => {
-    setCurrentProject({ ...image, index: i });
-    setIsModalOpen(!isModalOpen);
-  };
+  // const toggleModal = (image, i) => {
+  //   setCurrentProject({ ...image, index: i });
+  //   setModalShow(modalShow);
+  // };
 
   return (
-    <div>
-      {isModalOpen && (
-        <Modal onClose={toggleModal} currentProject={currentProject} />
-      )}
-      <div>
+    <>
+      <ModalDiv
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+        currentProject={currentProject}
+      />
+      <Row xs={1} md={2} className="g-5 m-5">
         {projects.map((image, i) => (
-          <img
-            src={require(`../../assets/small/${i}.jpg`)}
-            alt={image.name}
-            onClick={() => toggleModal(image, i)}
-            key={image.name}
-          />
+          <Col>
+            <Card>
+              <Card.Img
+                variant="top"
+                src={require(`../../assets/small/${i}.jpg`)}
+                alt={image.name}
+                onClick={() => {
+                  setModalShow(true);
+                  setCurrentProject({ ...image, index: i });
+                }}
+                key={image.name}
+              />
+              <Card.Body>
+                <Card.Title>{image.name}</Card.Title>
+                <Card.Text>{image.description}</Card.Text>
+                <Button href={image.url} target="_blank" rel="noreferrer">
+                  Live Link
+                </Button>
+                <Button href={image.github} target="_blank" rel="noreferrer">
+                  Github Repo
+                </Button>
+              </Card.Body>
+            </Card>
+          </Col>
         ))}
-      </div>
-    </div>
+      </Row>
+    </>
   );
 }
 

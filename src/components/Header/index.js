@@ -1,4 +1,4 @@
-import Nav from "../Nav";
+import Navigation from "../Nav";
 
 function Header(props) {
   const {
@@ -10,13 +10,13 @@ function Header(props) {
 
   return (
     <header>
-      <h1>John Davis</h1>
-      <Nav
+      {/* <h1>John Davis</h1> */}
+      <Navigation
         setPortfolioSelected={setPortfolioSelected}
         setContactSelected={setContactSelected}
         setAboutSelected={setAboutSelected}
         setResumeSelected={setResumeSelected}
-      ></Nav>
+      ></Navigation>
     </header>
   );
 }

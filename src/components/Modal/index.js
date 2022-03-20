@@ -1,23 +1,30 @@
 import React from "react";
+import { Modal, Button } from "react-bootstrap";
 
-const Modal = ({ onClose, currentProject }) => {
-  const { name, description, index } = currentProject;
+const ModalDiv = (props) => {
+  console.log("test", props);
 
   return (
-    <div>
-      <div>
-        <img
-          src={`../../assets/large/${index}.jpg`}
-          alt={name}
-        />
-        <p>{name}</p>
-        <p>{description}</p>
-        <button type="button" onClick={onClose}>
-          Close this modal
-        </button>
-      </div>
-    </div>
+    <>
+      <Modal size="lg" aria-labelledby="contained-modal-title-vcenter" centered>
+        <Modal.Header closeButton>
+          <Modal.Title id="contained-modal-title-vcenter">
+            {props.currentProject.name}
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <img
+            src={`../../assets/large/${props.currentProject.index}.jpg`}
+            alt={props.currentProject.name}
+          />
+          <p>{props.currentProject.description}</p>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button onClick={props.onHide}>Close</Button>
+        </Modal.Footer>
+      </Modal>
+    </>
   );
 };
 
-export default Modal;
+export default ModalDiv;
