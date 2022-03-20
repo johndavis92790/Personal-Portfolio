@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Container, Form, Button } from "react-bootstrap";
 
 import { validateEmail } from "../../utils/helpers";
 
@@ -41,49 +42,54 @@ function Contact() {
   };
 
   return (
-    <section>
+    <Container fluid="md">
       <h1>Contact me</h1>
       <h3>John Davis, Web Developer</h3>
       <h5>Cell: 801-633-6013</h5>
       <h5>Email: johndavis92790@gmail.com</h5>
-      <form id="contact-form" onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="name">Name:</label>
-          <input
+      <Form id="contact-form" onSubmit={handleSubmit}>
+        <Form.Group className="mb-3" controlId="formBasicName">
+          <Form.Label>Name</Form.Label>
+          <Form.Control
             type="text"
+            placeholder="Name"
             name="name"
             defaultValue={name}
             onBlur={handleChange}
           />
-        </div>
-        <div>
-          <label htmlFor="email">Email address:</label>
-          <input
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formBasicEmail">
+          <Form.Label>Email address</Form.Label>
+          <Form.Control
             type="email"
+            placeholder="Enter email"
             name="email"
             defaultValue={email}
             onBlur={handleChange}
           />
-        </div>
-        <div>
-          <label htmlFor="message">Message:</label>
-          <textarea
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="formBasicMessage">
+          <Form.Label>Message</Form.Label>
+          <Form.Control
+            type="text"
+            as="textarea"
+            placeholder="Name"
             name="message"
             rows="3"
             defaultValue={message}
             onBlur={handleChange}
           />
-        </div>
+        </Form.Group>
         {errorMessage && (
           <div>
             <p>{errorMessage}</p>
           </div>
         )}
-        <button data-testid="button" type="submit">
+        <Button data-testid="button" variant="primary" type="submit">
           Submit
-        </button>
-      </form>
-    </section>
+        </Button>
+      </Form>
+    </Container>
   );
 }
 

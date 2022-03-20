@@ -56,11 +56,11 @@ function Project() {
 
   return (
     <>
-      <ModalDiv
-        show={modalShow}
-        onHide={() => setModalShow(false)}
-        currentProject={currentProject}
-      />
+      {/* <ModalDiv
+      show={modalShow}
+      onHide={() => setModalShow(false)}
+      currentProject={currentProject}
+      /> */}
       <Row xs={1} md={2} className="g-5 m-5">
         {projects.map((image, i) => (
           <Col>
