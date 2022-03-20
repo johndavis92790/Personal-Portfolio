@@ -1,38 +1,67 @@
-// import React, { useEffect } from "react";
+
 
 function Nav(props) {
 
   const {
+    setAboutSelected,
     setContactSelected,
+    setPortfolioSelected,
+    setResumeSelected,
   } = props;
 
   return (
-    <header>
-      <nav>
-        <ul>
-          <li>
-            <a href="#about" onClick={() => setContactSelected(false)}>
-              About
-            </a>
-          </li>
-          <li>
-            <a href="#contact" onClick={() => setContactSelected(true)}>
-              Contact
-            </a>
-          </li>
-          <li>
-            <a href="#portfolio" onClick={() => setContactSelected(false)}>
-              Portfolio
-            </a>
-          </li>
-          <li>
-            <a href="#resume" onClick={() => setContactSelected(false)}>
-              Resume
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </header>
+    <nav>
+      <ul>
+        <li>
+          <span
+            onClick={() => {
+              setPortfolioSelected(false);
+              setContactSelected(false);
+              setAboutSelected(true);
+              setResumeSelected(false);
+            }}
+          >
+            About Me
+          </span>
+        </li>
+        <li>
+          <span
+            onClick={() => {
+              setPortfolioSelected(false);
+              setContactSelected(true);
+              setAboutSelected(false);
+              setResumeSelected(false);
+            }}
+          >
+            Contact
+          </span>
+        </li>
+        <li>
+          <span
+            onClick={() => {
+              setPortfolioSelected(true);
+              setContactSelected(false);
+              setAboutSelected(false);
+              setResumeSelected(false);
+            }}
+          >
+            Portfolio
+          </span>
+        </li>
+        <li>
+          <span
+            onClick={() => {
+              setPortfolioSelected(false);
+              setContactSelected(false);
+              setAboutSelected(false);
+              setResumeSelected(true);
+            }}
+          >
+            Resume
+          </span>
+        </li>
+      </ul>
+    </nav>
   );
 }
 
