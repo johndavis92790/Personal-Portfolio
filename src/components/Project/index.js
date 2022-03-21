@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import ModalDiv from "../Modal";
-import { Button, Row, Col, Card } from "react-bootstrap";
+// import ModalDiv from "../Modal";
+import { Modal, Button, Row, Col, Card } from "react-bootstrap";
 
 function Project() {
-  const [modalShow, setModalShow] = useState(false);
-  const [currentProject, setCurrentProject] = useState();
+  
+  let [modalShow, setModalShow] = useState(false);
+  let [currentProject, setCurrentProject] = useState();
 
   const [projects] = useState([
     {
@@ -49,19 +50,46 @@ function Project() {
     },
   ]);
 
-  // const toggleModal = (image, i) => {
-  //   setCurrentProject({ ...image, index: i });
-  //   setModalShow(modalShow);
-  // };
+  function handleModal() {
+    setModalShow(!modalShow);
+    if (modalShow) {
+      console.log("modalShow", modalShow);
+      return <ModalDiv/>;
+    }
+  };
+
+  function ModalDiv() {
+    return (
+      <Modal
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+        size="lg"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
+        <Modal.Header closeButton>
+          <Modal.Title id="contained-modal-title-vcenter">
+            {currentProject.name}
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <img
+            src={`../../assets/large/${currentProject.index}.jpg`}
+            alt={currentProject.name}
+          />
+          <p>{currentProject.description}</p>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button onClick={handleModal()}>Close</Button>
+        </Modal.Footer>
+      </Modal>
+    );
+  }
 
   return (
     <>
-      {/* <ModalDiv
-      show={modalShow}
-      onHide={() => setModalShow(false)}
-      currentProject={currentProject}
-      /> */}
-      <Row xs={1} md={2} className="g-5 m-5">
+      
+      <Row xs={1} md={2} className="g-5 mx-5 mt-1">
         {projects.map((image, i) => (
           <Col>
             <Card>
@@ -70,7 +98,8 @@ function Project() {
                 src={require(`../../assets/small/${i}.jpg`)}
                 alt={image.name}
                 onClick={() => {
-                  setModalShow(true);
+                  handleModal();
+                  console.log("currentProject", currentProject);
                   setCurrentProject({ ...image, index: i });
                 }}
                 key={image.name}
@@ -91,6 +120,9 @@ function Project() {
       </Row>
     </>
   );
+  
 }
+
+
 
 export default Project;

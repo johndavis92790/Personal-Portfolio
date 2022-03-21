@@ -10,7 +10,6 @@ function Header(props) {
 
   return (
     <header>
-      {/* <h1>John Davis</h1> */}
       <Navigation
         setPortfolioSelected={setPortfolioSelected}
         setContactSelected={setContactSelected}

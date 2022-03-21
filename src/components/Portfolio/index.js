@@ -5,12 +5,10 @@ import { Container } from "react-bootstrap";
 function Portfolio() {
   return (
     <Container fluid="md">
-      <section>
-        <h1 id="portfolio">Portfolio</h1>
-        <div>
-          <Project></Project>
-        </div>
-      </section>
+      <h1 id="portfolio" className="mt-5">
+        Portfolio
+      </h1>
+      <Project></Project>
     </Container>
   );
 }

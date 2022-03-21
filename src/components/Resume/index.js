@@ -4,15 +4,15 @@ import { Container, Row, Col } from "react-bootstrap";
 
 function Resume() {
   return (
-    <Container fluid="md">
+    <Container fluid="md" className="mt-5">
       <Row>
         <Col>
           <h1 id="resume">Resume</h1>
           <a href={Pdf} target="_blank" rel="noreferrer">
-            Resume
+            <p className="mt-3">View my resume</p>
           </a>
           <div>
-            <p>
+            <p className="mt-3">
               Top Languages/Technologies: Javascript, React, Express.js,
               MongoDB, Node.js, HTML, CSS.
             </p>

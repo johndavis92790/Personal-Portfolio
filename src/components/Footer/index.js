@@ -7,11 +7,11 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 function Footer() {
   return (
     <Container>
-      <Navbar fixed="bottom" expand="lg" variant="light" bg="light">
+      <Navbar fixed="bottom" expand="lg">
         <Container>
           <Navbar.Brand className="m-auto" id="footer">
             <a
-              className="m-3"
+              className="m-3 icons"
               href="https://github.com/johndavis92790"
               target="_blank"
               rel="noreferrer"
@@ -19,7 +19,7 @@ function Footer() {
               <FaGithub size={50} />
             </a>
             <a
-              className="m-3"
+              className="m-3 icons"
               href="https://www.linkedin.com/in/john-w-davis-3b518482/"
               target="_blank"
               rel="noreferrer"

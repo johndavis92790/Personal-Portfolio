@@ -1,11 +1,19 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Image, Container, Row, Col } from "react-bootstrap";
 
 function About() {
   return (
-    <Container fluid="md">
-      <Row>
-        <Col>
+    <Container fluid="md" className="mt-5">
+      <Row className="align-items-center">
+        <Col sm={4} className="p-5">
+          <Image
+            fluid
+            roundedCircle
+            src={require(`../../assets/small/john.jpg`)}
+            alt="John Davis"
+          />
+        </Col>
+        <Col sm={8} className="p-5">
           <h1 id="about">About Me</h1>
           <div>
             <p>
