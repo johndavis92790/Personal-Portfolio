@@ -1,13 +1,12 @@
 import React, { useState } from "react";
-// import ModalDiv from "../Modal";
-import { Modal, Button, Row, Col, Card } from "react-bootstrap";
+import ModalDiv from "../Modal";
+import { Button, Row, Col, Card } from "react-bootstrap";
 
 function Project() {
   
-  let [modalShow, setModalShow] = useState(false);
-  let [currentProject, setCurrentProject] = useState();
+  const [currentProject, setCurrentProject] = useState();
 
-  const [projects] = useState([
+  const projects = [
     {
       name: "Stony Brook",
       description: "Making returns easy, one step at a time",
@@ -48,71 +47,52 @@ function Project() {
       url: "https://miniture-eureka-92790.herokuapp.com/",
       github: "https://github.com/johndavis92790/miniture-eureka",
     },
-  ]);
-
-  function handleModal() {
-    setModalShow(!modalShow);
-    if (modalShow) {
-      console.log("modalShow", modalShow);
-      return <ModalDiv/>;
-    }
-  };
-
-  function ModalDiv() {
-    return (
-      <Modal
-        show={modalShow}
-        onHide={() => setModalShow(false)}
-        size="lg"
-        aria-labelledby="contained-modal-title-vcenter"
-        centered
-      >
-        <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-vcenter">
-            {currentProject.name}
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <img
-            src={`../../assets/large/${currentProject.index}.jpg`}
-            alt={currentProject.name}
-          />
-          <p>{currentProject.description}</p>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button onClick={handleModal()}>Close</Button>
-        </Modal.Footer>
-      </Modal>
-    );
-  }
+  ];
 
   return (
     <>
-      
-      <Row xs={1} md={2} className="g-5 mx-5 mt-1">
+      {currentProject ? (
+        <ModalDiv
+          setCurrentProject={setCurrentProject}
+          currentProject={currentProject}
+        />
+      ) : null}
+      <Row xs={1} sm={2} className="g-5 mx-3 mt-1">
         {projects.map((image, i) => (
-          <Col>
+          <Col key={image.name}>
             <Card>
               <Card.Img
                 variant="top"
                 src={require(`../../assets/small/${i}.jpg`)}
                 alt={image.name}
+                style={{ cursor: "pointer" }}
                 onClick={() => {
-                  handleModal();
-                  console.log("currentProject", currentProject);
                   setCurrentProject({ ...image, index: i });
+                  console.log("currentProject", currentProject);
                 }}
-                key={image.name}
               />
               <Card.Body>
-                <Card.Title>{image.name}</Card.Title>
+                <Card.Title className="montserrat">{image.name}</Card.Title>
                 <Card.Text>{image.description}</Card.Text>
-                <Button href={image.url} target="_blank" rel="noreferrer">
-                  Live Link
-                </Button>
-                <Button href={image.github} target="_blank" rel="noreferrer">
-                  Github Repo
-                </Button>
+                <Card.Text>
+                  <a
+                    href={image.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-3"
+                  >
+                    Live Link
+                  </a>
+                  &nbsp;&nbsp;&nbsp;&nbsp;
+                  <a
+                    href={image.github}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-3"
+                  >
+                    Github Repo
+                  </a>
+                </Card.Text>
               </Card.Body>
             </Card>
           </Col>
@@ -122,7 +102,5 @@ function Project() {
   );
   
 }
-
-
 
 export default Project;

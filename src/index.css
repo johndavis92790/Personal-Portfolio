@@ -1,3 +1,4 @@
+
 body {
   margin: 0;
   font-family: "Montserrat";
@@ -6,11 +7,11 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: "Montserrat",
     monospace;
 }
 
-p, h1, h2, h3, h4, h5, span, label, input, button, a {
+p, h1, h2, h3, h4, h5, span, label, input, button, a, li {
   font-family: "Montserrat";
 }
 
@@ -18,7 +19,7 @@ nav {
   background-color: rgb(92,103,132, 16%);
 }
 
-.navText, a, a:visited {
+.navText, a, a:visited{
   color: #157F1F;
   font-size: 20px;
 }
@@ -27,6 +28,11 @@ nav {
   color: #157F1F;
   font-size: 28px;
 }
+
+.button-color{
+  background-color: #157F1F;
+}
+
 p {
   font-size: 18px;
 }

@@ -13,7 +13,8 @@ function Navigation(props) {
       <Container>
         <Navbar.Brand>
           <span
-            className="navTextName"
+            style={{ cursor: "pointer" }}
+            className="navTextName mx-3"
             onClick={() => {
               setPortfolioSelected(false);
               setContactSelected(false);
@@ -29,7 +30,7 @@ function Navigation(props) {
           <Nav className="me-auto">
             <Nav.Link>
               <span
-                className="navText"
+                className="navText mx-3"
                 onClick={() => {
                   setPortfolioSelected(false);
                   setContactSelected(false);
@@ -42,7 +43,7 @@ function Navigation(props) {
             </Nav.Link>
             <Nav.Link>
               <span
-                className="navText"
+                className="navText mx-3"
                 onClick={() => {
                   setPortfolioSelected(false);
                   setContactSelected(true);
@@ -55,7 +56,7 @@ function Navigation(props) {
             </Nav.Link>
             <Nav.Link>
               <span
-                className="navText"
+                className="navText mx-3"
                 onClick={() => {
                   setPortfolioSelected(true);
                   setContactSelected(false);
@@ -68,7 +69,7 @@ function Navigation(props) {
             </Nav.Link>
             <Nav.Link>
               <span
-                className="navText"
+                className="navText mx-3"
                 onClick={() => {
                   setPortfolioSelected(false);
                   setContactSelected(false);

@@ -4,7 +4,7 @@ import { Container } from "react-bootstrap";
 
 function Portfolio() {
   return (
-    <Container fluid="md">
+    <Container fluid="md" className="mb-5">
       <h1 id="portfolio" className="mt-5">
         Portfolio
       </h1>

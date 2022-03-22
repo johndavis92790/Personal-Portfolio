@@ -13,9 +13,17 @@ function Resume() {
           </a>
           <div>
             <p className="mt-3">
-              Top Languages/Technologies: Javascript, React, Express.js,
-              MongoDB, Node.js, HTML, CSS.
+              Top Languages/Technologies:
             </p>
+            <ul>
+              <li>Javascript</li>
+              <li>React</li>
+              <li>Express.js</li>
+              <li>MongoDB</li>
+              <li>Node.js</li>
+              <li>HTML</li>
+              <li>CSS</li>
+            </ul>
           </div>
         </Col>
       </Row>

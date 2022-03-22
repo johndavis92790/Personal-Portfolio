@@ -1,28 +1,37 @@
-// import React from "react";
-// import { Modal, Button } from "react-bootstrap";
-// import { handleModal } from "../Project";
+import React from "react";
+import { Modal, Button } from "react-bootstrap";
 
-// const ModalDiv = (props) => {
-//   console.log("test", props);
+const ModalDiv = ({ setCurrentProject, currentProject }) => {
+  console.log("test", currentProject);
 
-//   return (
-//     <>
-//       <Modal size="lg" aria-labelledby="contained-modal-title-vcenter" centered>
-//         <Modal.Header closeButton>
-//           <Modal.Title id="contained-modal-title-vcenter">
-//             {props.name}
-//           </Modal.Title>
-//         </Modal.Header>
-//         <Modal.Body>
-//           <img src={`../../assets/large/${props.index}.jpg`} alt={props.name} />
-//           <p>{props.description}</p>
-//         </Modal.Body>
-//         <Modal.Footer>
-//           <Button onClick={handleModal()}>Close</Button>
-//         </Modal.Footer>
-//       </Modal>
-//     </>
-//   );
-// };
+  return (
+    <>
+      <Modal
+        show={true}
+        onHide={() => setCurrentProject(null)}
+        size="lg"
+        aria-labelledby="contained-modal-title-vcenter"
+        centered
+      >
+        <Modal.Header closeButton>
+          <Modal.Title id="contained-modal-title-vcenter">
+            {currentProject.name}
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <img
+            className="img-fluid"
+            src={require(`../../assets/large/${currentProject.index}.jpg`)}
+            alt={currentProject.name}
+          />
+          <p>{currentProject.description}</p>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button onClick={() => setCurrentProject(null)}>Close</Button>
+        </Modal.Footer>
+      </Modal>
+    </>
+  );
+};
 
-// export default ModalDiv;
+export default ModalDiv;
