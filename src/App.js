@@ -15,23 +15,16 @@ import Resume from "./components/Resume";
 
 function App() {
   
-  const [portfolioSelected, setPortfolioSelected] = useState(false);
-  const [contactSelected, setContactSelected] = useState(false);
-  const [aboutSelected, setAboutSelected] = useState(true);
-  const [resumeSelected, setResumeSelected] = useState(false);
+  const [navSelection, setNavSelection] = useState('about');
+
   return (
     <div>
-      <Header
-        setPortfolioSelected={setPortfolioSelected}
-        setContactSelected={setContactSelected}
-        setAboutSelected={setAboutSelected}
-        setResumeSelected={setResumeSelected}
-      ></Header>
+      <Header setNavSelection={setNavSelection}></Header>
       <main>
-        {portfolioSelected ? <Portfolio></Portfolio> : <></>}
-        {contactSelected ? <Contact></Contact> : <></>}
-        {aboutSelected ? <About></About> : <></>}
-        {resumeSelected ? <Resume></Resume> : <></>}
+        {navSelection === "portfolio" ? <Portfolio></Portfolio> : <></>}
+        {navSelection === "contact" ? <Contact></Contact> : <></>}
+        {navSelection === "about" ? <About></About> : <></>}
+        {navSelection === "resume" ? <Resume></Resume> : <></>}
       </main>
       <Footer></Footer>
     </div>

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ModalDiv from "../Modal";
-import { Button, Row, Col, Card } from "react-bootstrap";
+import { Row, Col, Card } from "react-bootstrap";
 
 function Project() {
   
@@ -57,50 +57,113 @@ function Project() {
           currentProject={currentProject}
         />
       ) : null}
-      <Row xs={1} sm={2} className="g-5 mx-3 mt-1">
-        {projects.map((image, i) => (
-          <Col key={image.name}>
-            <Card>
-              <Card.Img
-                variant="top"
-                src={require(`../../assets/small/${i}.jpg`)}
-                alt={image.name}
-                style={{ cursor: "pointer" }}
-                onClick={() => {
-                  setCurrentProject({ ...image, index: i });
-                  console.log("currentProject", currentProject);
-                }}
-              />
-              <Card.Body>
-                <Card.Title className="montserrat">{image.name}</Card.Title>
-                <Card.Text>{image.description}</Card.Text>
-                <Card.Text>
-                  <a
-                    href={image.url}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="mt-3"
-                  >
-                    Live Link
-                  </a>
-                  &nbsp;&nbsp;&nbsp;&nbsp;
-                  <a
-                    href={image.github}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="mt-3"
-                  >
-                    Github Repo
-                  </a>
-                </Card.Text>
-              </Card.Body>
-            </Card>
-          </Col>
-        ))}
-      </Row>
+        {projects.map((image, i) => {
+          if (i === 0 || i % 2 === 0) {
+            return (
+              <Row
+                key={image.name + "-image"}
+                xs={1}
+                sm={2}
+                className="g-0 mx-3 mt-1"
+              >
+                <Col className="mx-0 my-4">
+                  <Card>
+                    <Card.Img
+                      variant="top"
+                      src={require(`../../assets/small/${i}.jpg`)}
+                      alt={image.name}
+                      style={{ cursor: "pointer" }}
+                      onClick={() => {
+                        setCurrentProject({ ...image, index: i });
+                        console.log("currentProject", currentProject);
+                      }}
+                    />
+                  </Card>
+                </Col>
+                <Col className="my-auto px-3">
+                  <Card border="light">
+                    <Card.Body>
+                      <Card.Title>{image.name}</Card.Title>
+                      <Card.Text>{image.description}</Card.Text>
+                      <Card.Text>
+                        <a
+                          href={image.url}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="mt-3"
+                        >
+                          Live Link
+                        </a>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <a
+                          href={image.github}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="mt-3"
+                        >
+                          Github Repo
+                        </a>
+                      </Card.Text>
+                    </Card.Body>
+                  </Card>
+                </Col>
+              </Row>
+            );
+          } else {
+            return (
+              <Row
+                key={image.name}
+                xs={1}
+                sm={2}
+                className="g-0 mx-3 mt-1"
+              >
+                <Col key={image.name + "-image"} className="my-auto px-3">
+                  <Card border="light">
+                    <Card.Body>
+                      <Card.Title>{image.name}</Card.Title>
+                      <Card.Text>{image.description}</Card.Text>
+                      <Card.Text>
+                        <a
+                          href={image.url}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="mt-3"
+                        >
+                          Live Link
+                        </a>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <a
+                          href={image.github}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="mt-3"
+                        >
+                          Github Repo
+                        </a>
+                      </Card.Text>
+                    </Card.Body>
+                  </Card>
+                </Col>
+                <Col className="mx-0 my-4">
+                  <Card>
+                    <Card.Img
+                      variant="top"
+                      src={require(`../../assets/small/${i}.jpg`)}
+                      alt={image.name}
+                      style={{ cursor: "pointer" }}
+                      onClick={() => {
+                        setCurrentProject({ ...image, index: i });
+                        console.log("currentProject", currentProject);
+                      }}
+                    />
+                  </Card>
+                </Col>
+              </Row>
+            );
+          }
+        })}
     </>
   );
-  
 }
 
 export default Project;

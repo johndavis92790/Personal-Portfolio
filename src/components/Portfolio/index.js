@@ -6,7 +6,7 @@ function Portfolio() {
   return (
     <Container fluid="md" className="mb-5">
       <h1 id="portfolio" className="mt-5">
-        Portfolio
+        Recent Projects
       </h1>
       <Project></Project>
     </Container>

@@ -1,12 +1,7 @@
 import { Navbar, Nav, Container } from "react-bootstrap";
 
 function Navigation(props) {
-  const {
-    setAboutSelected,
-    setContactSelected,
-    setPortfolioSelected,
-    setResumeSelected,
-  } = props;
+  const { setNavSelection } = props;
 
   return (
     <Navbar expand="lg">
@@ -15,12 +10,7 @@ function Navigation(props) {
           <span
             style={{ cursor: "pointer" }}
             className="navTextName mx-3"
-            onClick={() => {
-              setPortfolioSelected(false);
-              setContactSelected(false);
-              setAboutSelected(true);
-              setResumeSelected(false);
-            }}
+            onClick={() => setNavSelection("about")}
           >
             John Davis
           </span>
@@ -31,12 +21,7 @@ function Navigation(props) {
             <Nav.Link>
               <span
                 className="navText mx-3"
-                onClick={() => {
-                  setPortfolioSelected(false);
-                  setContactSelected(false);
-                  setAboutSelected(true);
-                  setResumeSelected(false);
-                }}
+                onClick={() => setNavSelection("about")}
               >
                 About Me
               </span>
@@ -44,12 +29,7 @@ function Navigation(props) {
             <Nav.Link>
               <span
                 className="navText mx-3"
-                onClick={() => {
-                  setPortfolioSelected(false);
-                  setContactSelected(true);
-                  setAboutSelected(false);
-                  setResumeSelected(false);
-                }}
+                onClick={() => setNavSelection("contact")}
               >
                 Contact
               </span>
@@ -57,12 +37,7 @@ function Navigation(props) {
             <Nav.Link>
               <span
                 className="navText mx-3"
-                onClick={() => {
-                  setPortfolioSelected(true);
-                  setContactSelected(false);
-                  setAboutSelected(false);
-                  setResumeSelected(false);
-                }}
+                onClick={() => setNavSelection("portfolio")}
               >
                 Portfolio
               </span>
@@ -70,12 +45,7 @@ function Navigation(props) {
             <Nav.Link>
               <span
                 className="navText mx-3"
-                onClick={() => {
-                  setPortfolioSelected(false);
-                  setContactSelected(false);
-                  setAboutSelected(false);
-                  setResumeSelected(true);
-                }}
+                onClick={() => setNavSelection("resume")}
               >
                 Resume
               </span>
