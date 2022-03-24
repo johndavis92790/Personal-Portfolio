@@ -8,7 +8,7 @@ function Project() {
 
   const projects = [
     {
-      name: "Stony Brook",
+      name: "Salty Brook",
       description: "Making returns easy, one step at a time",
       url: "https://salty-brook-34116.herokuapp.com/",
       github: "https://github.com/johndavis92790/Warehouse-Returns",
