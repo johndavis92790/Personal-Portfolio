@@ -43,7 +43,7 @@ function Contact() {
   };
 
   return (
-    <Container fluid="md" className="mt-5">
+    <Container fluid="md" className="mt-5 mb-5">
       <Row>
         <Col sm={4}>
           <h1 className="mb-3">Contact me</h1>
@@ -98,7 +98,11 @@ function Contact() {
                 <p>{errorMessage}</p>
               </div>
             )}
-            <Button className="button-color" data-testid="button" type="submit">
+            <Button
+              className="button-color  mb-5"
+              data-testid="button"
+              type="submit"
+            >
               Submit
             </Button>
           </Form>

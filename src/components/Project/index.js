@@ -57,6 +57,7 @@ function Project() {
           currentProject={currentProject}
         />
       ) : null}
+      <div className="pb-4">
         {projects.map((image, i) => {
           if (i === 0 || i % 2 === 0) {
             return (
@@ -111,13 +112,12 @@ function Project() {
             );
           } else {
             return (
-              <Row
-                key={image.name}
-                xs={1}
-                sm={2}
-                className="g-0 mx-3 mt-1"
-              >
-                <Col key={image.name + "-image"} className="my-auto px-3">
+              <Row key={image.name} xs={1} sm={2} className="g-0 mx-3 mt-1">
+                <Col
+                  className="my-auto px-3"
+                  xs={{ order: "last" }}
+                  sm={{ order: "first" }}
+                >
                   <Card border="light">
                     <Card.Body>
                       <Card.Title>{image.name}</Card.Title>
@@ -162,6 +162,7 @@ function Project() {
             );
           }
         })}
+      </div>
     </>
   );
 }

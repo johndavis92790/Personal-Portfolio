@@ -13,7 +13,7 @@ function About() {
             alt="John Davis"
           />
         </Col>
-        <Col sm={8} className="p-5">
+        <Col sm={8} className="p-5 mb-5">
           <h1 id="about">About Me</h1>
           <div>
             <p>
