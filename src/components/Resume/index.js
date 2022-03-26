@@ -1,5 +1,5 @@
 import React from "react";
-import Pdf from "../../assets/pdf/resume.pdf";
+import Pdf from "https://www.davisdeveloper.com/resume.pdf";
 import { Container, Row, Col } from "react-bootstrap";
 
 function Resume() {
