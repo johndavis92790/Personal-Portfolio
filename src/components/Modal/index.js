@@ -24,7 +24,26 @@ const ModalDiv = ({ setCurrentProject, currentProject }) => {
             src={require(`../../assets/large/${currentProject.index}.jpg`)}
             alt={currentProject.name}
           />
-          <p>{currentProject.description}</p>
+          <p className="p-5">{currentProject.description}</p>
+          <span className="px-5">
+            <a
+              href={currentProject.url}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-3"
+            >
+              Live Link
+            </a>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <a
+              href={currentProject.github}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-3"
+            >
+              Github Repo
+            </a>
+          </span>
         </Modal.Body>
         <Modal.Footer>
           <Button onClick={() => setCurrentProject(null)}>Close</Button>
