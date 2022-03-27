@@ -9,7 +9,7 @@ const ModalDiv = ({ setCurrentProject, currentProject }) => {
       <Modal
         show={true}
         onHide={() => setCurrentProject(null)}
-        size="lg"
+        size="xl"
         aria-labelledby="contained-modal-title-vcenter"
         centered
       >

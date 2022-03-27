@@ -1,5 +1,5 @@
 import React from "react";
-import Pdf from "https://www.davisdeveloper.com/resume.pdf";
+import Pdf from "../../assets/resume2.pdf";
 import { Container, Row, Col } from "react-bootstrap";
 
 function Resume() {
@@ -13,7 +13,8 @@ function Resume() {
           </a>
           <div>
             <p className="mt-3">
-              Top Languages/Technologies:
+              Top Languages/Technologies: Javascript, React, Express.js,
+              MongoDB, Node.js, HTML, CSS.
             </p>
             <ul>
               <li>Javascript</li>

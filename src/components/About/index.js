@@ -9,7 +9,7 @@ function About() {
           <Image
             fluid
             roundedCircle
-            src={require(`../../assets/small/john.jpg`)}
+            src={require(`../../assets/small/john3.jpg`)}
             alt="John Davis"
           />
         </Col>
