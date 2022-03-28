@@ -3,7 +3,7 @@ import { Image, Container, Row, Col } from "react-bootstrap";
 
 function About() {
   return (
-    <Container fluid="md" className="mt-5">
+    <Container fluid="md" className="my-5">
       <Row className="align-items-center">
         <Col sm={4} className="p-5">
           <Image

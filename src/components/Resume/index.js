@@ -4,7 +4,7 @@ import { Container, Row, Col } from "react-bootstrap";
 
 function Resume() {
   return (
-    <Container fluid="md" className="mt-5">
+    <Container fluid="md" className="my-5">
       <Row>
         <Col>
           <h1 id="resume">Resume</h1>

@@ -43,7 +43,7 @@ function Contact() {
   };
 
   return (
-    <Container fluid="md" className="mt-5 mb-5">
+    <Container fluid="md" className="my-5">
       <Row>
         <Col sm={4}>
           <h1 className="mb-3">Contact me</h1>
