@@ -61,6 +61,45 @@ function Project() {
     },
   ];
 
+  const ifLiveLink = (project) => {
+    if (project.url === '') {
+      return (
+        <Card.Text>
+          <a
+            href={project.github}
+            target="_blank"
+            rel="noreferrer"
+            className="mt-3"
+          >
+            Github Repo
+          </a>
+        </Card.Text>
+      );
+    } else {
+      return (
+        <Card.Text>
+          <a
+            href={project.url}
+            target="_blank"
+            rel="noreferrer"
+            className="mt-3"
+          >
+            Live Link
+          </a>
+          &nbsp;&nbsp;&nbsp;&nbsp;
+          <a
+            href={project.github}
+            target="_blank"
+            rel="noreferrer"
+            className="mt-3"
+          >
+            Github Repo
+          </a>
+        </Card.Text>
+      );
+    }
+  }
+
   return (
     <>
       {currentProject ? (
@@ -70,11 +109,11 @@ function Project() {
         />
       ) : null}
       <div className="pb-4">
-        {projects.map((image, i) => {
+        {projects.map((project, i) => {
           if (i === 0 || i % 2 === 0) {
             return (
               <Row
-                key={image.name + "-image"}
+                key={project.name + "-project"}
                 xs={1}
                 sm={2}
                 className="g-0 mx-3 mt-1"
@@ -84,10 +123,10 @@ function Project() {
                     <Card.Img
                       variant="top"
                       src={require(`../../assets/small/${i}.jpg`)}
-                      alt={image.name}
+                      alt={project.name}
                       style={{ cursor: "pointer" }}
                       onClick={() => {
-                        setCurrentProject({ ...image, index: i });
+                        setCurrentProject({ ...project, index: i });
                       }}
                     />
                   </Card>
@@ -95,27 +134,9 @@ function Project() {
                 <Col className="my-auto px-3">
                   <Card border="light">
                     <Card.Body>
-                      <Card.Title>{image.name}</Card.Title>
-                      <Card.Text>{image.caption}</Card.Text>
-                      <Card.Text>
-                        <a
-                          href={image.url}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="mt-3"
-                        >
-                          Live Link
-                        </a>
-                        &nbsp;&nbsp;&nbsp;&nbsp;
-                        <a
-                          href={image.github}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="mt-3"
-                        >
-                          Github Repo
-                        </a>
-                      </Card.Text>
+                      <Card.Title>{project.name}</Card.Title>
+                      <Card.Text>{project.caption}</Card.Text>
+                      {ifLiveLink(project)}
                     </Card.Body>
                   </Card>
                 </Col>
@@ -123,7 +144,7 @@ function Project() {
             );
           } else {
             return (
-              <Row key={image.name} xs={1} sm={2} className="g-0 mx-3 mt-1">
+              <Row key={project.name} xs={1} sm={2} className="g-0 mx-3 mt-1">
                 <Col
                   className="my-auto px-3"
                   xs={{ order: "last" }}
@@ -131,27 +152,9 @@ function Project() {
                 >
                   <Card border="light">
                     <Card.Body>
-                      <Card.Title>{image.name}</Card.Title>
-                      <Card.Text>{image.caption}</Card.Text>
-                      <Card.Text>
-                        <a
-                          href={image.url}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="mt-3"
-                        >
-                          Live Link
-                        </a>
-                        &nbsp;&nbsp;&nbsp;&nbsp;
-                        <a
-                          href={image.github}
-                          target="_blank"
-                          rel="noreferrer"
-                          className="mt-3"
-                        >
-                          Github Repo
-                        </a>
-                      </Card.Text>
+                      <Card.Title>{project.name}</Card.Title>
+                      <Card.Text>{project.caption}</Card.Text>
+                      {ifLiveLink(project)}
                     </Card.Body>
                   </Card>
                 </Col>
@@ -160,10 +163,10 @@ function Project() {
                     <Card.Img
                       variant="top"
                       src={require(`../../assets/small/${i}.jpg`)}
-                      alt={image.name}
+                      alt={project.name}
                       style={{ cursor: "pointer" }}
                       onClick={() => {
-                        setCurrentProject({ ...image, index: i });
+                        setCurrentProject({ ...project, index: i });
                       }}
                     />
                   </Card>

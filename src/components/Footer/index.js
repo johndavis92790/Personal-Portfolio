@@ -4,7 +4,7 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 function Footer() {
   return (
-    <Container fuild>
+    <Container>
       <Navbar fixed="bottom" expand="lg">
         <Container>
           <Navbar.Brand className="m-auto" id="footer">

@@ -2,7 +2,45 @@ import React from "react";
 import { Modal, Button } from "react-bootstrap";
 
 const ModalDiv = ({ setCurrentProject, currentProject }) => {
-  console.log("test", currentProject);
+  
+  const ifLiveLink = (project) => {
+    if (project.url === "") {
+      return (
+        <span className="px-5">
+          <a
+            href={project.github}
+            target="_blank"
+            rel="noreferrer"
+            className="mt-3"
+          >
+            Github Repo
+          </a>
+        </span>
+      );
+    } else {
+      return (
+        <span className="px-5">
+          <a
+            href={project.url}
+            target="_blank"
+            rel="noreferrer"
+            className="mt-3"
+          >
+            Live Link
+          </a>
+          &nbsp;&nbsp;&nbsp;&nbsp;
+          <a
+            href={project.github}
+            target="_blank"
+            rel="noreferrer"
+            className="mt-3"
+          >
+            Github Repo
+          </a>
+        </span>
+      );
+    }
+  };
 
   return (
     <>
@@ -25,25 +63,7 @@ const ModalDiv = ({ setCurrentProject, currentProject }) => {
             alt={currentProject.name}
           />
           <p className="p-5">{currentProject.description}</p>
-          <span className="px-5">
-            <a
-              href={currentProject.url}
-              target="_blank"
-              rel="noreferrer"
-              className="mt-3"
-            >
-              Live Link
-            </a>
-            &nbsp;&nbsp;&nbsp;&nbsp;
-            <a
-              href={currentProject.github}
-              target="_blank"
-              rel="noreferrer"
-              className="mt-3"
-            >
-              Github Repo
-            </a>
-          </span>
+          {ifLiveLink(currentProject)}
         </Modal.Body>
         <Modal.Footer>
           <Button onClick={() => setCurrentProject(null)}>Close</Button>
