@@ -88,7 +88,6 @@ function Project() {
                       style={{ cursor: "pointer" }}
                       onClick={() => {
                         setCurrentProject({ ...image, index: i });
-                        console.log("currentProject", currentProject);
                       }}
                     />
                   </Card>
@@ -165,7 +164,6 @@ function Project() {
                       style={{ cursor: "pointer" }}
                       onClick={() => {
                         setCurrentProject({ ...image, index: i });
-                        console.log("currentProject", currentProject);
                       }}
                     />
                   </Card>

@@ -1,33 +1,31 @@
-import React, { useState } from 'react';
-// import ReactDOM from "react-dom";
-// import { library } from "@fortawesome/fontawesome-svg-core";
-// import { fas } from "@fortawesome/free-solid-svg-icons";
-// import { fa-linkedin, faFontAwesome } from "@fortawesome/free-brand-svg-icons";
+import React from 'react';
+import { Route, Routes, BrowserRouter as Router } from "react-router-dom";
 
-import Contact from "./components/Contact";
-import Portfolio from "./components/Portfolio";
-import About from "./components/About";
+import Contact from "./pages/Contact";
+import Portfolio from "./pages/Portfolio";
+import About from "./pages/About";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import Resume from "./components/Resume";
-
-// library.add(fas, faTwitter, faFontAwesome);
+import Resume from "./pages/Resume";
 
 function App() {
-  
-  const [navSelection, setNavSelection] = useState('about');
 
   return (
-    <div>
-      <Header setNavSelection={setNavSelection}></Header>
-      <main>
-        {navSelection === "portfolio" ? <Portfolio></Portfolio> : <></>}
-        {navSelection === "contact" ? <Contact></Contact> : <></>}
-        {navSelection === "about" ? <About></About> : <></>}
-        {navSelection === "resume" ? <Resume></Resume> : <></>}
-      </main>
-      <Footer></Footer>
-    </div>
+    <Router>
+      <div>
+        <Header></Header>
+        <main>
+          <Routes>
+            <Route path="/" exact element={<About />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/resume" element={<Resume />} />
+          </Routes>
+        </main>
+        <Footer></Footer>
+      </div>
+    </Router>
   );
 }
 

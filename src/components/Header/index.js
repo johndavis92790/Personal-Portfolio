@@ -1,12 +1,10 @@
 import Navigation from "../Nav";
 
-function Header(props) {
-  const { setNavSelection } = props;
+function Header() {
 
   return (
     <header>
       <Navigation
-        setNavSelection={setNavSelection}
       ></Navigation>
     </header>
   );

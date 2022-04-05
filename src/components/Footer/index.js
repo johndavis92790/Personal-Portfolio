@@ -1,12 +1,10 @@
 import React from "react";
 import { Container, Navbar } from "react-bootstrap";
-
 import { FaGithub, FaLinkedin } from "react-icons/fa";
-
 
 function Footer() {
   return (
-    <Container>
+    <Container fuild>
       <Navbar fixed="bottom" expand="lg">
         <Container>
           <Navbar.Brand className="m-auto" id="footer">
@@ -30,13 +28,6 @@ function Footer() {
         </Container>
       </Navbar>
     </Container>
-    // <section>
-    //   <h1 id="footer">Footer</h1>
-    //   <div>
-    //     {/* <FontAwesomeIcon icon="fa-brands fa-linkedin" />
-    //     <FontAwesomeIcon icon="fa-brands fa-github" /> */}
-    //   </div>
-    // </section>
   );
 }
 
