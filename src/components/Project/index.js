@@ -4,8 +4,10 @@ import { Row, Col, Card } from "react-bootstrap";
 
 function Project() {
   
+  // useState to keep track of which project is selected for the modal
   const [currentProject, setCurrentProject] = useState();
 
+  // Array of projects with links and descriptions
   const projects = [
     {
       name: "Salty Brook",
@@ -61,6 +63,7 @@ function Project() {
     },
   ];
 
+  //Some projects are back-end only, so they do not have a live link, this function dynamically displays the correct links for each project
   const ifLiveLink = (project) => {
     if (project.url === '') {
       return (
@@ -102,6 +105,7 @@ function Project() {
 
   return (
     <>
+      {/* To display a modal over the projects page */}
       {currentProject ? (
         <ModalDiv
           setCurrentProject={setCurrentProject}
@@ -109,6 +113,7 @@ function Project() {
         />
       ) : null}
       <div className="pb-4">
+        {/* To display each project as a new row, changing left or right on each row to have a staggered effect */}
         {projects.map((project, i) => {
           if (i === 0 || i % 2 === 0) {
             return (
@@ -126,6 +131,7 @@ function Project() {
                       alt={project.name}
                       style={{ cursor: "pointer" }}
                       onClick={() => {
+                        // useState to set which project is selected for the modal
                         setCurrentProject({ ...project, index: i });
                       }}
                     />
@@ -166,6 +172,7 @@ function Project() {
                       alt={project.name}
                       style={{ cursor: "pointer" }}
                       onClick={() => {
+                        // useState to set which project is selected for the modal
                         setCurrentProject({ ...project, index: i });
                       }}
                     />

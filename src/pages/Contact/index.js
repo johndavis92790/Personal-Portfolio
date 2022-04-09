@@ -4,6 +4,7 @@ import { FaPhone, FaEnvelope } from "react-icons/fa";
 
 import { validateEmail } from "../../utils/helpers";
 
+//contact page, form does not do anything with the information yet
 function Contact() {
   const [formState, setFormState] = useState({
     name: "",

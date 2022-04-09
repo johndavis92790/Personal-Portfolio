@@ -1,6 +1,7 @@
 import React from "react";
 import { Image, Container, Row, Col } from "react-bootstrap";
 
+// about page
 function About() {
   return (
     <Container fluid="md" className="my-5">

@@ -2,7 +2,7 @@ import { Navbar, Nav, Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 function Navigation() {
-
+// navgation component for header
   return (
     <Navbar expand="lg">
       <Container>

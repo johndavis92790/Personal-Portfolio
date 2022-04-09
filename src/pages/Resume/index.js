@@ -8,6 +8,7 @@ function Resume() {
       <Row>
         <Col>
           <h1 id="resume">Resume</h1>
+          {/* Link to my resume pdf file within the filesytem */}
           <a href={Pdf} target="_blank" rel="noreferrer">
             <p className="mt-3">View my resume</p>
           </a>

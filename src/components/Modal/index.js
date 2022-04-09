@@ -1,8 +1,9 @@
 import React from "react";
 import { Modal, Button } from "react-bootstrap";
 
+
 const ModalDiv = ({ setCurrentProject, currentProject }) => {
-  
+  //Some projects are back-end only, so they do not have a live link, this function dynamically displays the correct links for each project
   const ifLiveLink = (project) => {
     if (project.url === "") {
       return (
@@ -42,34 +43,33 @@ const ModalDiv = ({ setCurrentProject, currentProject }) => {
     }
   };
 
+  // Modal div to display larger screen shot and more information for each project
   return (
-    <>
-      <Modal
-        show={true}
-        onHide={() => setCurrentProject(null)}
-        size="xl"
-        aria-labelledby="contained-modal-title-vcenter"
-        centered
-      >
-        <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-vcenter">
-            {currentProject.name}
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <img
-            className="img-fluid"
-            src={require(`../../assets/large/${currentProject.index}.jpg`)}
-            alt={currentProject.name}
-          />
-          <p className="p-5">{currentProject.description}</p>
-          {ifLiveLink(currentProject)}
-        </Modal.Body>
-        <Modal.Footer>
-          <Button onClick={() => setCurrentProject(null)}>Close</Button>
-        </Modal.Footer>
-      </Modal>
-    </>
+    <Modal
+      show={true}
+      onHide={() => setCurrentProject(null)}
+      size="xl"
+      aria-labelledby="contained-modal-title-vcenter"
+      centered
+    >
+      <Modal.Header closeButton>
+        <Modal.Title id="contained-modal-title-vcenter">
+          {currentProject.name}
+        </Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        <img
+          className="img-fluid"
+          src={require(`../../assets/large/${currentProject.index}.jpg`)}
+          alt={currentProject.name}
+        />
+        <p className="p-5">{currentProject.description}</p>
+        {ifLiveLink(currentProject)}
+      </Modal.Body>
+      <Modal.Footer>
+        <Button onClick={() => setCurrentProject(null)}>Close</Button>
+      </Modal.Footer>
+    </Modal>
   );
 };
 
