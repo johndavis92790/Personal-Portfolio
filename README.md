@@ -1,4 +1,4 @@
-# John Davis Developer Profolio
+# John Davis Developer Portfolio
 
 [![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://opensource.org/licenses/MIT)
 
