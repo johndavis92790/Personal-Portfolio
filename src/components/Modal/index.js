@@ -60,7 +60,7 @@ const ModalDiv = ({ setCurrentProject, currentProject }) => {
       <Modal.Body>
         <img
           className="img-fluid"
-          src={require(`../../assets/large/${currentProject.index}.jpg`)}
+          src={require(`../../assets/large/${currentProject.name}.jpg`)}
           alt={currentProject.name}
         />
         <p className="p-5">{currentProject.description}</p>
