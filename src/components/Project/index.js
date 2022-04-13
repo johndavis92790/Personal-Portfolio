@@ -26,7 +26,7 @@ function Project() {
         "This project was started to help alliviate some of the hedaches of processing returns for Davis Distributing Co, a wholesale warehouse that has been in John's family for over 65 years. As a B2B wholesaler of truck equipment, we sell lots of products to repeat reselling customers. Anytime they need to return a product they purchased, it is a headache for everyone involved. Right now its about 4 times the amount of work versus selling them the product but we don't make any money on this work. This app is designed to be a simple, linear step by step style process to help everyone involved, the customer, the warehouse people physically handling the products and the office manager tasked with the paperwork side of things. This app uses lots of different technologies including: HTML, Bulma, CSS, JS, Handlebars.js, Express.js, Heroku, Sequelize.js, MySQL Database.",
     },
     {
-      name: "Can We Make It?",
+      name: "Can We Make It",
       caption:
         "Quick and easy way app to check local showtimes and if you can make a showing or not",
       url: "https://johndavis92790.github.io/travel-buddy/",
