@@ -10,6 +10,14 @@ function Project() {
   // Array of projects with links and descriptions
   const projects = [
     {
+      name: "Pards Hitches E-Commerce Website",
+      caption: "Full stack MERN application",
+      url: "https://ancient-island-13793.herokuapp.com/",
+      github: "https://github.com/johndavis92790/pards-react",
+      description:
+        "This was our final project for this course, it was quite hard to throw together in about 9 days. It taught me how to make decisions quickly and iterate them fast. We shot for a MVP and I feel like we got there. Not everything works on this sit yet but the majority does and works well. It was really fulfilling to get the csv file upload working. It may not be the most efficient way to fix that problem but thats whats fun about this profession is you can almost always refactor more and improve your products continually. It solved a problem that I had and made the site much more interesting. This is going to be starter point to a side gig for me in the future to create a template for an e-commerce site for resellers in the automotive business. I had many, many customers just like Pards that could really benefit from something like this and if I can have a system to easliy iterate for each business simply and cater to them individually then it could be benficial for both sides. I have lots of work to do with this system and I am excited to improve it over time.",
+    },
+    {
       name: "Salty Brook",
       caption: "Making returns easy, one step at a time",
       url: "https://salty-brook-34116.herokuapp.com/",
