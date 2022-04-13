@@ -135,7 +135,7 @@ function Project() {
                   <Card>
                     <Card.Img
                       variant="top"
-                      src={require(`../../assets/small/${i}.jpg`)}
+                      src={require(`../../assets/small/${project.name}.jpg`)}
                       alt={project.name}
                       style={{ cursor: "pointer" }}
                       onClick={() => {
@@ -176,7 +176,7 @@ function Project() {
                   <Card>
                     <Card.Img
                       variant="top"
-                      src={require(`../../assets/small/${i}.jpg`)}
+                      src={require(`../../assets/small/${project.name}.jpg`)}
                       alt={project.name}
                       style={{ cursor: "pointer" }}
                       onClick={() => {
