@@ -3,26 +3,36 @@ import { Col, Row, Container, Form, Button } from "react-bootstrap";
 import { FaPhone, FaEnvelope } from "react-icons/fa";
 
 import { validateEmail } from "../../utils/helpers";
+import emailjs from '@emailjs/browser';
 
 //contact page, form does not do anything with the information yet
 function Contact() {
   const [formState, setFormState] = useState({
-    name: "",
-    email: "",
+    from_name: "",
+    reply_to: "",
     message: "",
   });
 
   const [errorMessage, setErrorMessage] = useState("");
-  const { name, email, message } = formState;
+  const { from_name, reply_to, message } = formState;
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!errorMessage) {
       console.log("Submit Form", formState);
     }
+
+    emailjs.send('service_dgn1h1v', 'template_sjfdcwy', formState, '0r7oVBNyL-i10sXda')
+      .then((response) => {
+        console.log('SUCCESS!', response.status, response.text);
+      }, (error) => {
+        console.log('FAILED...', error);
+      });
+
   };
 
   const handleChange = (e) => {
+    console.log("Target", e.target);
     if (e.target.name === "email") {
       const isValid = validateEmail(e.target.value);
       if (!isValid) {
@@ -67,8 +77,8 @@ function Contact() {
               <Form.Control
                 type="text"
                 placeholder="Name"
-                name="name"
-                defaultValue={name}
+                name="from_name"
+                defaultValue={from_name}
                 onBlur={handleChange}
               />
             </Form.Group>
@@ -77,8 +87,8 @@ function Contact() {
               <Form.Control
                 type="email"
                 placeholder="Enter email"
-                name="email"
-                defaultValue={email}
+                name="reply_to"
+                defaultValue={reply_to}
                 onBlur={handleChange}
               />
             </Form.Group>
@@ -100,7 +110,7 @@ function Contact() {
               </div>
             )}
             <Button
-              className="button-color  mb-5"
+              className="button-color mb-5"
               data-testid="button"
               type="submit"
             >
